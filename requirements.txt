@@ -1,0 +1,13 @@
+# Python 3.12 (tested on 3.12.3). Direct dependencies, pinned; full transitive lock in requirements.lock
+fastapi==0.162.2
+httpx==0.28.1
+joblib==1.6.0
+lightgbm==4.7.0
+matplotlib==3.11.2
+numpy==2.5.4
+pandas==3.0.6
+pydantic==2.14.3
+pytest==9.2.0
+scikit-learn==1.9.1
+scipy==1.18.1
+uvicorn==0.54.0

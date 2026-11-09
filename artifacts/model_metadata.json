@@ -1,0 +1,77 @@
+{
+  "model_version": "churn-lightgbm-20261109",
+  "model_name": "lightgbm_weighted_calibrated",
+  "threshold": 0.2,
+  "trained_at_utc": "2026-11-09T10:47:37+00:00",
+  "features": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "SeniorCitizen",
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "data_sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+  "split": {
+    "strategy": "stratified 60/20/20",
+    "seed": 42,
+    "train": 4225,
+    "val": 1409,
+    "test": 1409
+  },
+  "validation_metrics": {
+    "pr_auc": 0.6418704441207701,
+    "roc_auc": 0.8378594125397194,
+    "f1_macro": 0.679998080736997,
+    "precision": 0.4630681818181818,
+    "recall": 0.8716577540106952,
+    "flag_rate": 0.49964513839602553,
+    "threshold": 0.2,
+    "net_benefit_usd": 56050.09999999999
+  },
+  "fallback": {
+    "rule": "Contract == 'Month-to-month' and tenure < 12",
+    "p_if_rule": 0.5174,
+    "p_otherwise": 0.1711
+  },
+  "business_assumptions": {
+    "offer_cost_usd": 50.0,
+    "offer_success_rate": 0.3,
+    "value_horizon_months": 12
+  },
+  "lightgbm_best_params": {
+    "colsample_bytree": 0.9462794992449889,
+    "learning_rate": 0.05031534265670323,
+    "min_child_samples": 98,
+    "n_estimators": 330,
+    "num_leaves": 4,
+    "reg_lambda": 0.012261087663689309,
+    "subsample": 0.8590760482165449,
+    "subsample_freq": 1
+  },
+  "logistic_best_C": 14.528246637516036,
+  "cv_pr_auc": {
+    "logistic_weighted": 0.6655869071626651,
+    "lightgbm_weighted": 0.6780586903402295
+  },
+  "library_versions": {
+    "python": "3.12.3",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4"
+  }
+}

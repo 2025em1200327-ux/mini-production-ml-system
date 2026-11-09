@@ -1,0 +1,92 @@
+{
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+    "cpu_count": 1,
+    "processor": "x86_64",
+    "server": "uvicorn, 1 worker"
+  },
+  "model_only": {
+    "deployed_single_calibrated": {
+      "n": 500,
+      "p50_ms": 10.24,
+      "p95_ms": 14.24,
+      "p99_ms": 16.88,
+      "max_ms": 20.6,
+      "mean_ms": 10.87,
+      "vectorised_rows_per_sec": 71501
+    },
+    "ensemble_5_calibrated": {
+      "n": 500,
+      "p50_ms": 48.84,
+      "p95_ms": 69.5,
+      "p99_ms": 77.36,
+      "max_ms": 142.38,
+      "mean_ms": 51.59,
+      "vectorised_rows_per_sec": 16942
+    }
+  },
+  "http_predict_sequential": {
+    "n": 1000,
+    "p50_ms": 13.22,
+    "p95_ms": 20.23,
+    "p99_ms": 21.79,
+    "max_ms": 103.52,
+    "mean_ms": 14.4,
+    "errors": 0,
+    "requests_per_sec": 69.5
+  },
+  "http_batch_100": {
+    "n": 100,
+    "p50_ms": 19.7,
+    "p95_ms": 27.89,
+    "p99_ms": 29.58,
+    "max_ms": 108.65,
+    "mean_ms": 22.24,
+    "errors": 0,
+    "records_per_sec": 4497
+  },
+  "http_predict_concurrency_8": {
+    "n": 2000,
+    "p50_ms": 119.51,
+    "p95_ms": 195.15,
+    "p99_ms": 245.11,
+    "max_ms": 332.41,
+    "mean_ms": 126.27,
+    "errors": 0,
+    "throughput_rps": 62.6
+  },
+  "http_predict_fallback": {
+    "n": 500,
+    "p50_ms": 3.47,
+    "p95_ms": 4.95,
+    "p99_ms": 5.61,
+    "max_ms": 46.46,
+    "mean_ms": 3.78,
+    "errors": 0,
+    "health": {
+      "status": "degraded",
+      "model_loaded": false,
+      "model_version": "fallback-rule-v1",
+      "fallback_available": true
+    },
+    "sample_response": {
+      "customer_id": "4376-KFVRS",
+      "churn_probability": 0.1711,
+      "churn_flag": false,
+      "decision": "no_action",
+      "threshold": 0.2,
+      "model_version": "fallback-rule-v1",
+      "degraded": true
+    }
+  },
+  "batch_cli_100k": {
+    "rows_in": 100000,
+    "scored": 100000,
+    "rejected": 0,
+    "seconds_total": 4.189,
+    "seconds_validation": 3.06,
+    "records_per_sec": 23869.8,
+    "model_version": "churn-lightgbm-20261109"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "rows": {
+    "train": 4225,
+    "val": 1409,
+    "test": 1409
+  },
+  "churn_rate": {
+    "train": 0.2653,
+    "val": 0.2654,
+    "test": 0.2654
+  },
+  "id_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "identical_feature_rows_shared_with_train": {
+    "val": 10,
+    "test": 12
+  },
+  "columns_excluded": [
+    "customerID"
+  ],
+  "post_outcome_columns_present": [],
+  "single_feature_auc_train": {
+    "Contract": 0.7442,
+    "tenure": 0.7405,
+    "OnlineSecurity": 0.7087,
+    "TechSupport": 0.7052,
+    "InternetService": 0.6986,
+    "OnlineBackup": 0.6807,
+    "PaymentMethod": 0.6746,
+    "DeviceProtection": 0.6697,
+    "TotalCharges": 0.6515,
+    "MonthlyCharges": 0.6239,
+    "StreamingMovies": 0.6206,
+    "StreamingTV": 0.6167,
+    "PaperlessBilling": 0.6064,
+    "Dependents": 0.5908,
+    "Partner": 0.5906,
+    "SeniorCitizen": 0.5599,
+    "num_addons": 0.5388,
+    "MultipleLines": 0.5248,
+    "gender": 0.507,
+    "charge_ratio": 0.5053,
+    "PhoneService": 0.5019
+  },
+  "max_single_feature_auc": 0.7442,
+  "single_feature_auc_flag_threshold": 0.9,
+  "imputer_medians_equal_train_medians": true
+}
